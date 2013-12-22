@@ -3,16 +3,12 @@ package com.home.pms.web;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 import org.springframework.web.HttpRequestHandler;
 
@@ -20,7 +16,6 @@ import com.home.pms.utils.PMSLogger;
 
 import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.core.util.StatusPrinter;
-import static com.home.pms.web.utils.Defines.*;
 
 
 @Component("TestServlet")
@@ -32,21 +27,6 @@ public class TestServlet implements HttpRequestHandler  {
 	
     public TestServlet() {
     }
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		StatusPrinter.print((LoggerContext)LoggerFactory.getILoggerFactory());
-				
-		try {
-//			ApplicationContext ctx = new ClassPathXmlApplicationContext(DEBUG_LOG_CONF_FILEPATH);
-//			PMSLogger pmsLogger =  (PMSLogger)ctx.getBean(PMS_LOGGER_BEAN);
-			pmsLogger.locatePMSLogger();
-			System.out.print("");
-		}
-		catch (Exception e) 
-		{
-			log.error(e.getMessage());
-		}
-		
-	}
 	@Override
 	public void handleRequest(HttpServletRequest arg0, HttpServletResponse arg1)
 			throws ServletException, IOException {
