@@ -31,7 +31,7 @@
 
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>/WEB-INF/debugBeansContext.xml</param-value>
+		<param-value>/WEB-INF/debugBeansContext.xml,/WEB-INF/applicationContext.xml</param-value>
 	</context-param> 
  
 	<listener>
