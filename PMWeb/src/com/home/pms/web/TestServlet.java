@@ -3,8 +3,6 @@ package com.home.pms.web;
 import java.io.IOException;
 
 
-//iomport javax.ejb.EJB;import javax.naming.InitialContext;
-//import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +14,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.HttpRequestHandler;
 
 import com.home.pms.utils.PMSLogger;
-//import com.whsolutions.pms.ejb.AdminEjb;
 
 import com.whsolutions.pms.ejb.AdminEjbLocal;
 
