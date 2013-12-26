@@ -8,6 +8,9 @@
         <dependent-module archiveName="PMSUtils-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/PMSUtils/PMSUtils">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="PMSEJB-0.0.1-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/PMSEJB/PMSEJB">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="java-output-path" value="/PMWeb/build/classes"/>
         <property name="context-root" value="PMWeb"/>
     </wb-module>
