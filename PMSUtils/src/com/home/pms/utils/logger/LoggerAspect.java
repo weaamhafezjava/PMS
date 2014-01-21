@@ -7,6 +7,7 @@ import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.util.StopWatch;
 	
 @Aspect
 public class LoggerAspect {
@@ -25,6 +26,8 @@ public class LoggerAspect {
 			String targetClassName = joinPoint.getTarget().getClass().getName();
 			String targetMethodName = joinPoint.getSignature().getName();
 			// print the start time of method
+			StopWatch stopWatch = new StopWatch();
+			stopWatch.start();
 			Calendar startDate = Calendar.getInstance();
 			log.debug("Method: " + targetClassName + "." + targetMethodName + " Started: " + startDate.get(Calendar.HOUR) + ":" + startDate.get(Calendar.MINUTE) + ":" + startDate.get(Calendar.SECOND) +"." + startDate.get(Calendar.MILLISECOND));
 			
@@ -32,11 +35,14 @@ public class LoggerAspect {
 			joinPoint.proceed();
 			
 			// print the end time of method
+			stopWatch.stop();
 			Calendar endDate = Calendar.getInstance();
 			log.debug("Method: " + targetClassName + "." + targetMethodName + " Ended: " + endDate.get(Calendar.HOUR) + ":" + endDate.get(Calendar.MINUTE) + ":" + endDate.get(Calendar.SECOND) +"." + endDate.get(Calendar.MILLISECOND));
 			
 			//print the time elapsed
-			log.debug("Method: " + targetClassName + "." + targetMethodName + " Time elapsed: " + ((endDate.getTimeInMillis() - startDate.getTimeInMillis()) / 1000d)+ " seconds");
+			log.debug("Method: " + targetClassName + "." + targetMethodName + " Time elapsed: " + stopWatch.getTotalTimeSeconds() + " seconds");
+
+//			log.debug("Method: " + targetClassName + "." + targetMethodName + " Time elapsed: " + ((endDate.getTimeInMillis() - startDate.getTimeInMillis()) / 1000d)+ " seconds");
 		} 
 		catch (Throwable e)
 		{

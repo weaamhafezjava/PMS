@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd" >
+
+<hibernate-reverse-engineering>
+	<table-filter match-name="pms_groups" match-catalog="pms_storage"></table-filter>
+	<table-filter match-name="pms_menus" match-catalog="pms_storage"></table-filter>
+	<table-filter match-name="pms_menus_groups"
+		match-catalog="pms_storage">
+	</table-filter>
+	<table-filter match-name="pms_priviliges"
+		match-catalog="pms_storage">
+	</table-filter>
+	<table-filter match-name="pms_users" match-catalog="pms_storage"></table-filter>
+	<table-filter match-name="pms_users_groups"
+		match-catalog="pms_storage">
+	</table-filter>
+	<table catalog="pms_storage" name="pms_groups">
+		<column name="group_id"></column>
+		<column name="creation_date"></column>
+		<column name="description"></column>
+		<column name="group_name"></column>
+	</table>
+	<table catalog="pms_storage" name="pms_menus_groups">
+		<column name="group_id"></column>
+		<column name="menu_id"></column>
+		<column name="privilege_id"></column>
+	</table>
+	<table catalog="pms_storage" name="pms_menus">
+		<column name="menu_id"></column>
+		<column name="creation_date"></column>
+		<column name="description"></column>
+		<column name="menu_name"></column>
+	</table>
+	<table catalog="pms_storage" name="pms_priviliges">
+		<column name="privilege_id"></column>
+		<column name="creation_date"></column>
+		<column name="description"></column>
+	</table>
+	<table catalog="pms_storage" name="pms_users_groups">
+		<column name="group_id"></column>
+		<column name="user_id"></column>
+	</table>
+	<table catalog="pms_storage" name="pms_users">
+		<column name="user_id"></column>
+		<column name="address"></column>
+		<column name="creation_date"></column>
+		<column name="email"></column>
+		<column name="mobile"></column>
+		<column name="password"></column>
+		<column name="user_name"></column>
+	</table>
+</hibernate-reverse-engineering>
