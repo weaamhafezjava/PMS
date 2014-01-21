@@ -14,4 +14,6 @@ public class GenericDao {
 
 	@Autowired
 	public SessionFactory sessionFactory;
+	
+	
 }
