@@ -48,10 +48,4 @@
 	<bean id="PmsUsersDao" class="com.whsolutions.core.dao.PmsUsersDao">
 	
 	</bean>
-	<bean id="CategoryDAO" class="com.weaam.bookstore.core.dao.CategoryDAO" parent="hibernateDaoSupport">
-	</bean>
-	<bean id="OrderDetailsDAO" class="com.weaam.bookstore.core.dao.OrderDetailsDAO" parent="hibernateDaoSupport">
-	</bean>
-	<bean id="OrderDAO" class="com.weaam.bookstore.core.dao.OrderDAO" parent="hibernateDaoSupport">
-	</bean>
 </beans>

@@ -32,25 +32,20 @@
 				</prop>
 			</props>
 		</property>
-		<property name="mappingResources">
+		<!-- <property name="mappingResources">
 			<list>
 				<value>com/weaam/bookstore/core/impl/Book.hbm.xml</value>
 				<value>com/weaam/bookstore/core/impl/Category.hbm.xml</value>
 				<value>com/weaam/bookstore/core/impl/Order.hbm.xml</value>
 				<value>com/weaam/bookstore/core/impl/OrderDetails.hbm.xml</value>
 				</list>
-		</property></bean>
+		</property> --></bean>
 		
 	
 	<bean id="txManager" class="org.springframework.orm.hibernate3.HibernateTransactionManager">
 		<property name="sessionFactory" ref="sessionFactory" />
 	</bean>
-	<bean id="BookDAO" class="com.weaam.bookstore.core.dao.BookDAO" parent="hibernateDaoSupport">
-	</bean>
-	<bean id="CategoryDAO" class="com.weaam.bookstore.core.dao.CategoryDAO" parent="hibernateDaoSupport">
-	</bean>
-	<bean id="OrderDetailsDAO" class="com.weaam.bookstore.core.dao.OrderDetailsDAO" parent="hibernateDaoSupport">
-	</bean>
-	<bean id="OrderDAO" class="com.weaam.bookstore.core.dao.OrderDAO" parent="hibernateDaoSupport">
+	<bean id="PmsUsersDao" class="com.whsolutions.core.dao.PmsUsersDao">
+	
 	</bean>
 </beans>
